@@ -1,6 +1,7 @@
 # -*- coding:utf-8 –*-
 # npuzzle.py
 # let python print chinese
+from importlib import reload
 import search
 import util
 import time
@@ -8,7 +9,6 @@ import sys
 
 reload(sys)
 type = sys.getfilesystemencoding()
-sys.setdefaultencoding(type)
 
 # Module Classes
 global size
@@ -199,7 +199,7 @@ def createNPuzzle(start, goal):
     # initial npuzzle
     global size
     # python read path with Chinese name
-    path = 'D:\\Npuzzle_in.txt'
+    path = 'C:\\Npuzzle_in.txt'
     path = unicode(path, "utf8")
     f = open(path)
     size = int(f.readline())
@@ -252,7 +252,7 @@ if __name__ == '__main__':
     if judge(start, goal):
         problem = NPuzzleSearchProblem(puzzle)
         path = search.aStarSearch(problem)
-        sc = open('D:\\Npuzzle_out.txt','w+')
+        sc = open('C:\\Npuzzle_out.txt','w+')
         sc.write("共" + str(len(path)) + "步"+"\n")
         sc.write("初始状态"+"\n" )
         print>> sc,puzzle
@@ -273,7 +273,7 @@ if __name__ == '__main__':
 
     # print running time
     endtime = time.time()
-    print "running time：" + str(endtime - starttime)
+    print("running time：" + str(endtime - starttime))
 
 
 

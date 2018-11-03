@@ -57,8 +57,8 @@ def IDeepSearch(problem):
             else:
                 visited.add(node)
             if problem.isGoalState(node):
-                print "epoch: " + str(epoch)
-                print "num of nodes: " + str(len(visited))
+                print ("epoch: " + str(epoch))
+                print ("num of nodes: " + str(len(visited)))
                 return actions
             if len(actions) == depth:
                 continue
@@ -84,7 +84,7 @@ def breadthFirstSearch(problem):
         else:
             visited.add(node)
         if problem.isGoalState(node):
-            print "num of nodes: " + str(len(visited))
+            print ("num of nodes: " + str(len(visited)))
             return actions
         for coord, direction, steps in problem.getSuccessors(node):
             if not coord in visited:
@@ -106,7 +106,7 @@ def uniformCostSearch(problem):
         else:
             visited.add(node)
         if problem.isGoalState(node):
-            print "num of nodes: " + str(len(visited))
+            print ("num of nodes: " + str(len(visited)))
             return actions
 
         for coord, direction, steps in problem.getSuccessors(node):
@@ -141,7 +141,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
         else:
             closedset.add(node)
         if problem.isGoalState(node):
-            print "num of nodes: " + str(len(closedset))
+            print ("num of nodes: " + str(len(closedset)))
             return actions
         for coord, direction, cost in problem.getSuccessors(node):
                 new_actions = actions + [direction]
@@ -174,8 +174,8 @@ def IDaStarSearch(problem, heuristic=nullHeuristic):
                 visited.add(node)
             if problem.isGoalState(node):
                 memory = len(visited)
-                print "epoch: " + str(epoch)
-                print "num of nodes: " + str(memory)
+                print ("epoch: " + str(epoch))
+                print ("num of nodes: " + str(memory))
                 return actions
             if score > limit:
                 over.add(score)
@@ -216,7 +216,7 @@ def RBFS_Search(problem, heuristic=nullHeuristic):
         else:
             closedset.add(node)
         if problem.isGoalState(node):
-            print "num of nodes: " + str(memory + len(closedset))
+            print ("num of nodes: " + str(memory + len(closedset)))
             return actions
 
         scores = set()
